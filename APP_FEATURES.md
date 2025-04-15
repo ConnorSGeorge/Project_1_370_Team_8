@@ -7,6 +7,7 @@ This guide explains how to use and test all the features of the Sanic applicatio
 1. Ensure Docker is installed on your system, as well as the . You can install Docker by following the official [Docker installation guide](https://docs.docker.com/get-docker/).
 2. Ensure that your MongoDB service is running, with an already populated version of the storedb from class
 3. Run the command to start the MongoDB service and build the Docker image for the application:
+4. 
    ```bash
    docker compose up
    ```
