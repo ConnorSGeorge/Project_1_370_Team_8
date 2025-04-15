@@ -132,7 +132,7 @@ The `/ws` route demonstrates WebSocket support by allowing real-time, bidirectio
 ## 6. Test the MongoDB Example Route (`/orders`), similar to class exercises
 
 ### Description:
-The `/orders` route demonstrates an asynchronous connection to a MongoDB server
+The `/orders` route demonstrates an asynchronous connection to a MongoDB server which runs in the container using docker compose
 
 ### Steps:
 1. Send a GET request to the `/orders` route:
