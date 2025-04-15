@@ -10,7 +10,10 @@ COPY . /app
 # Install the required Python packages, including a WebSocket library
 RUN pip install --no-cache-dir sanic websocket-client
 
-# Install Node.js and npm for wscat
+# Install additional dependencies for MongoDB
+RUN pip install --no-cache-dir pymongo
+
+# Node.js and npm installation for wscat
 RUN apt-get update && apt-get install -y nodejs npm && \
     npm install -g wscat && \
     apt-get clean && rm -rf /var/lib/apt/lists/*

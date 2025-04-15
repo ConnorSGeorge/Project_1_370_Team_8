@@ -4,14 +4,11 @@ This guide explains how to use and test all the features of the Sanic applicatio
 
 ## Prerequisites
 
-1. Ensure Docker is installed on your system. You can install Docker by following the official [Docker installation guide](https://docs.docker.com/get-docker/).
-2. Build the Docker image for the application:
+1. Ensure Docker is installed on your system, as well as the Docker Compose plugin. You can install Docker by following the official [Docker installation guide](https://docs.docker.com/get-docker/).
+2. Run the command to start the MongoDB service and build the Docker image for the application:
+   
    ```bash
-   docker build -t sanic-app .
-   ```
-3. Run the Docker container:
-   ```bash
-   docker run -p 8000:8000 sanic-app
+   docker compose up
    ```
    The application will now be accessible at `http://localhost:8000`.
 
@@ -128,3 +125,23 @@ The `/ws` route demonstrates WebSocket support by allowing real-time, bidirectio
      < Echo: Hello, server!
      ```
 
+## 6. Test the MongoDB Example Route (`/orders`), similar to class exercises
+
+### Description:
+The `/orders` route demonstrates an asynchronous connection to a MongoDB server running in a container using docker compose.
+The output will be all of the orders from the storedb database we used for demos in class.
+
+### Steps:
+1. Send a GET request to the `/orders` route:
+   ```bash
+   curl http://localhost:8000/orders
+   ```
+2. Expected Response:
+   ```json
+   [
+       {"order_id": "101", "user_id": "1", "product_id": "1001", "quantity": 1},
+       {"order_id": "102", "user_id": "2", "product_id": "1002", "quantity": 2},
+       {"order_id": "103", "user_id": "3", "product_id": "1003", "quantity": 1},
+       {"order_id": "104", "user_id": "1", "product_id": "1003", "quantity": 3}
+   ]
+   ```
