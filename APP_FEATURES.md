@@ -5,11 +5,12 @@ This guide explains how to use and test all the features of the Sanic applicatio
 ## Prerequisites
 
 1. Ensure Docker is installed on your system. You can install Docker by following the official [Docker installation guide](https://docs.docker.com/get-docker/).
-2. Build the Docker image for the application:
+2. Ensure that your MongoDB service is running, with an already populated version of the storedb from class
+3. Build the Docker image for the application:
    ```bash
    docker build -t sanic-app .
    ```
-3. Run the Docker container:
+4. Run the Docker container:
    ```bash
    docker run -p 8000:8000 sanic-app
    ```
@@ -128,3 +129,15 @@ The `/ws` route demonstrates WebSocket support by allowing real-time, bidirectio
      < Echo: Hello, server!
      ```
 
+## 6. Test the MongoDB Example Route (`/orders`), similar to class exercises
+
+### Description:
+The `/orders` route demonstrates an asynchronous connection to a MongoDB server
+
+### Steps:
+1. Send a GET request to the `/orders` route:
+   ```bash
+   curl http://localhost:8000/orders
+   ```
+2. Expected Response:
+   
